@@ -2,4 +2,9 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
-return {}
+return {
+  vim.lsp.config('lua_ls', {
+    cmd = { '/usr/bin/lua-language-server' },
+  }),
+  vim.lsp.enable 'lua_ls',
+}
