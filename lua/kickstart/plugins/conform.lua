@@ -1,6 +1,7 @@
 return {
   { -- Autoformat
     'stevearc/conform.nvim',
+    dependencies = { 'lewis6991/gitsigns.nvim' },
     event = { 'BufWritePre' },
     cmd = { 'ConformInfo' },
     keys = {
@@ -24,7 +25,7 @@ return {
           return nil
         else
           return {
-            timeout_ms = 500,
+            timeout_ms = 2500,
             lsp_format = 'fallback',
           }
         end

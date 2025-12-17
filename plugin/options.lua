@@ -73,4 +73,9 @@ vim.o.confirm = true
 
 vim.o.winborder = 'rounded'
 
+vim.opt.spelllang = 'en_us'
+
+vim.opt.wrap = true
+vim.opt.linebreak = true
+vim.opt.breakindent = true
 -- vim: ts=2 sts=2 sw=2 et

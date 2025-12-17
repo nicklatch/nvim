@@ -1,10 +1,11 @@
--- You can add your own plugins here or in other files in this directory!
---  I promise not to create any merge conflicts in this directory :)
---
--- See the kickstart.nvim README for more information
 return {
-  vim.lsp.config('lua_ls', {
-    cmd = { '/usr/bin/lua-language-server' },
+  vim.lsp.config('phptools', {
+    init_options = {
+      ['0'] = vim.env.DEVSENSE_KEY,
+      php = {
+        version = 7.4,
+      },
+    },
   }),
-  vim.lsp.enable 'lua_ls',
+  vim.lsp.enable 'phptools',
 }
