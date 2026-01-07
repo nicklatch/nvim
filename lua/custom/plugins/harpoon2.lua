@@ -1,5 +1,5 @@
+-- Marks for navigating your project | https://github.com/ThePrimeagen/harpoon/tree/harpoon2
 return {
-  -- Marks for navigating your project
   {
     'ThePrimeagen/harpoon',
     branch = 'harpoon2',

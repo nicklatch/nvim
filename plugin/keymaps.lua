@@ -5,21 +5,16 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 
+-- QOL
 vim.keymap.set('n', ';;', '<Esc>A;<Esc>')
 vim.keymap.set('n', ',,', '<Esc>A,<Esc>')
-
 vim.keymap.set('i', ';;', '<Esc>A;<Esc>')
 vim.keymap.set('i', ',,', '<Esc>A,<Esc>')
 
 -- Exit terminal mode in the builtin terminal with <C-\><C-n>
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
--- vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
--- vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
--- vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
--- vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
-
--- Window and kitty navigation
+-- Window navigation
 vim.keymap.set('n', '<C-j>', function()
   if vim.fn.exists ':NvimTmuxNavigateDown' ~= 0 then
     vim.cmd.NvimTmuxNavigateDown()
@@ -59,7 +54,7 @@ vim.keymap.set('n', 'S', function()
   vim.api.nvim_feedkeys(keys, 'n', false)
 end, { desc = 'Quick find/replace word under cursor' })
 
--- AutoCmds
+-- Cmds
 
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',

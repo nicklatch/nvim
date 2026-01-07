@@ -2,8 +2,8 @@ return {
   vim.lsp.config('phptools', {
     init_options = {
       ['0'] = vim.env.DEVSENSE_KEY,
-      php = {
-        version = 7.4,
+      debug = {
+        inline_values = true,
       },
     },
   }),

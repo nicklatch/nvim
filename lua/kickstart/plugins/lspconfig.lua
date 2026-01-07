@@ -223,8 +223,20 @@ return {
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
-        --
-
+        twiggy_language_server = {
+          settings = {
+            twiggy = {
+              framework = 'custom',
+              phpExecutable = 'php',
+              templatePaths = {
+                'views',
+              },
+            },
+          },
+        },
+        emmet_ls = {
+          filetypes = { 'html', 'php', 'twig' },
+        },
         lua_ls = {
           cmd = { 'lua-language-server' },
           -- filetypes = { ... },
