@@ -13,7 +13,7 @@ return {
         autou_update = true,
       },
       lspconfig = {
-        enabled = false, -- Using PHPTools/Devsense for LSP for now.
+        enabled = true, -- Using PHPTools/Devsense for LSP for now.
       },
     },
   },

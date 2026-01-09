@@ -7,5 +7,11 @@ return {
       },
     },
   }),
-  vim.lsp.enable 'phptools',
+  -- vim.lsp.enable 'phptools',
+
+  vim.lsp.config('ghostty', {
+    cmd = { 'ghostty-ls' },
+    filetypes = { 'ghostty' },
+  }),
+  vim.lsp.enable 'ghostty',
 }

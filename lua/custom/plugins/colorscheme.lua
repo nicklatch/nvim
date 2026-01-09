@@ -1,4 +1,22 @@
 return {
+  -- {
+  --   'navarasu/onedark.nvim',
+  --   priority = 1000, -- make sure to load this before all the other start plugins
+  --   config = function()
+  --     require('onedark').setup {
+  --       style = 'darker',
+  --     }
+  --     -- require('onedark').load()
+  --     -- vim.cmd.colorscheme 'onedark'
+  --   end,
+  -- },
+  -- {
+  --   'datsfilipe/vesper.nvim',
+  --   config = function()
+  --     require('vesper').setup {}
+  --     vim.cmd.colorscheme 'vesper'
+  --   end,
+  -- },
   {
     'catppuccin/nvim',
     name = 'catppuccin',
@@ -23,7 +41,7 @@ return {
           neotree = true,
         },
       }
-      -- vim.cmd.colorscheme 'catppuccin'
+      vim.cmd.colorscheme 'catppuccin'
     end,
   },
 }
