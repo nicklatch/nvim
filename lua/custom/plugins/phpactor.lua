@@ -6,14 +6,15 @@ return {
     dependencies = {
       'nvim-lua/plenary.nvim',
       'neovim/nvim-lspconfig',
+      'nvim-tree/nvim-web-devicons',
     },
     opts = {
       install = {
-        check_on_startup = 'always',
+        check_on_startup = 'daily',
         autou_update = true,
       },
       lspconfig = {
-        enabled = true, -- Using PHPTools/Devsense for LSP for now.
+        enabled = false, -- Using PHPTools/Devsense for LSP for now.
       },
     },
   },

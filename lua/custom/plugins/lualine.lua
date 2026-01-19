@@ -5,7 +5,7 @@ return {
   config = function()
     local function truncated_branch()
       local branch = vim.fn.systemlist('git rev-parse --abbrev-ref HEAD')[1]
-      return branch:match 'GO%-%d+' or branch
+      return branch:match 'GO%-%d+' or ''
     end
     require('lualine').setup {
       theme = 'auto',

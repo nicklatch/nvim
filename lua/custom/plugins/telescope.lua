@@ -53,7 +53,6 @@ return {
           file_ignore_patterns = {
             'node_modules',
             '.git',
-            'vendor',
             '_build',
           },
           path_display = {

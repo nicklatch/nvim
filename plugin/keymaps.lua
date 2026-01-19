@@ -47,6 +47,10 @@ vim.keymap.set('n', '<C-h>', function()
   end
 end, { desc = 'Navigate left' })
 
+vim.keymap.set({ 'n', 't' }, '<leader>tt', function()
+  vim.cmd.Floaterminal()
+end, { desc = '[T]oggle Floating [T]erminal' })
+
 -- Quick find/replace for word under cursor
 vim.keymap.set('n', 'S', function()
   local cmd = ':%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>'
@@ -54,8 +58,7 @@ vim.keymap.set('n', 'S', function()
   vim.api.nvim_feedkeys(keys, 'n', false)
 end, { desc = 'Quick find/replace word under cursor' })
 
--- Cmds
-
+-- Cmds | TODO:  This needs to be moved to own file
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),

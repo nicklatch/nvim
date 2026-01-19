@@ -29,6 +29,10 @@ vim.o.breakindent = true
 -- Save undo history
 vim.o.undofile = true
 
+-- Default to rounded borders for plugins that use `vim.o.winborder`
+vim.o.winborder = 'rounded'
+vim.o.termguicolors = true
+
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.o.ignorecase = true
 vim.o.smartcase = true
@@ -70,11 +74,7 @@ vim.o.scrolloff = 10
 -- instead raise a dialog asking if you wish to save the current file(s)
 -- See `:help 'confirm'`
 vim.o.confirm = true
-
-vim.o.winborder = 'rounded'
-
 vim.opt.spelllang = 'en_us'
-
 vim.opt.wrap = true
 vim.opt.linebreak = true
 vim.opt.breakindent = true
