@@ -4,12 +4,11 @@ return {
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   config = function()
     local function truncated_branch()
-      local is_git_repo = vim.fn.system 'git rev-parse --git-dir 2>/dev/null'
-      if vim.v.shell_error ~= 0 then
+      local branch = vim.fn.systemlist('git rev-parse --abbrev-ref HEAD 2>/dev/null')[1]
+      if not branch then
         return ''
       end
-      local branch = vim.fn.systemlist('git rev-parse --abbrev-ref HEAD')[1]
-      return branch:match 'GO%-%d+' or branch or ''
+      return branch:match 'GO%-%d+' or branch
     end
     require('lualine').setup {
       theme = 'auto',
