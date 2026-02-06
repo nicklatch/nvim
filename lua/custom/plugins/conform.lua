@@ -35,6 +35,7 @@ return {
         php = { 'mago_format', stop_after_first = true },
         twig = { 'djlint' },
         dockerfile = { 'dockerfmt' },
+        markdown = { 'markdownlint' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
@@ -45,6 +46,9 @@ return {
         pint = {
           args = { '--dirty', '$FILENAME' },
         },
+        -- djlint = {
+        --   args = { '$FILENAME', '--format-css', '--format-js' },
+        -- },
       },
     },
   },

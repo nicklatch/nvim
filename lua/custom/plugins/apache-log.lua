@@ -1,3 +1,5 @@
+local default_path = 'var/logs/taps-error.log'
+
 return {
   dir = '~/Repos/apache-log.nvim',
   dependencies = {
@@ -5,7 +7,13 @@ return {
     'MunifTanjim/nui.nvim',
   },
   keys = {
-    { '<leader>ta', function() require('apache-log').open() end, desc = '[T]oggle [A]pache Log Viewer' },
+    {
+      '<leader>ta',
+      function()
+        require('apache-log').open(default_path)
+      end,
+      desc = '[T]oggle [A]pache Log Viewer',
+    },
   },
   cmd = { 'ApacheLog', 'ApacheLogClose' },
   opts = {

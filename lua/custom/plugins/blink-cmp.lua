@@ -1,7 +1,7 @@
 -- Repo: https://github.com/saghen/blink.cmp
 -- Docs: https://cmp.saghen.dev/
 return {
-  { -- Autocompletion
+  {
     'saghen/blink.cmp',
     event = 'VimEnter',
     version = '1.*',
@@ -75,6 +75,10 @@ return {
       },
       sources = {
         default = { 'lsp', 'path', 'snippets', 'buffer', 'lazydev' },
+        per_filetype = {
+          sql = { 'snippets', 'dadbod', 'buffer' },
+          mysql = { 'snippets', 'dadbod', 'buffer' },
+        },
         providers = {
           lsp = { score_offset = 1000 },
           path = { score_offset = 3 },
@@ -88,6 +92,7 @@ return {
             min_keyword_length = 3,
           },
           lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
+          dadbod = { name = 'Dadbod', module = 'vim_dadbod_completion.blink' },
         },
       },
       snippets = { preset = 'luasnip' },

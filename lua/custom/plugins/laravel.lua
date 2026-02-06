@@ -4,7 +4,6 @@ return {
     'MunifTanjim/nui.nvim',
     'nvim-lua/plenary.nvim',
     'nvim-neotest/nvim-nio',
-    'nvim-telescope/telescope.nvim',
   },
   ft = { 'php', 'blade' },
   event = {
@@ -103,7 +102,7 @@ return {
   opts = {
     features = {
       pickers = {
-        provider = 'telescope', -- "| telescope | fzf-lua | ui-select"
+        provider = 'snacks', -- "| telescope | fzf-lua | ui-select"
       },
     },
   },

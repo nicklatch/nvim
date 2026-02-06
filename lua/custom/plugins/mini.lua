@@ -16,18 +16,18 @@ return {
       -- - sd'   - [S]urround [D]elete [']quotes
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require('mini.surround').setup()
-      require('mini.indentscope').setup {
-        draw = {
-          delay = 25,
-          animation = require('mini.indentscope').gen_animation.quadratic {
-            easing = 'out',
-            duration = 25,
-            unit = 'total',
-          },
-        },
-        symbol = '│',
-        options = { try_as_border = true },
-      }
+      -- require('mini.indentscope').setup {
+      --   draw = {
+      --     delay = 25,
+      --     animation = require('mini.indentscope').gen_animation.quadratic {
+      --       easing = 'out',
+      --       duration = 25,
+      --       unit = 'total',
+      --     },
+      --   },
+      --   symbol = '│',
+      --   options = { try_as_border = true },
+      -- }
 
       -- require('mini.statusline').setup()
       -- statusline.setup { use_icons = vim.g.have_nerd_font }

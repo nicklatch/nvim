@@ -6,9 +6,13 @@ return {
         options = {
           modules = {
             neotree = true,
-            telescope = true,
+            dap_ui = true,
+            blink = true,
             rainbow_delimiters = true,
             whichkey = true,
+            gitsigns = true,
+            fidget = true,
+            treesitter = true,
           },
         },
       }

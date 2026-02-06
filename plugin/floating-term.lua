@@ -1,3 +1,4 @@
+-- TODO: Remove this and just use the one from snacks
 local state = {
   floating = {
     buf = -1,
