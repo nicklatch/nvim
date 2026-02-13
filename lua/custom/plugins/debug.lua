@@ -8,7 +8,13 @@ return {
     'nvim-neotest/nvim-nio',
     'mason-org/mason.nvim',
     'jay-babu/mason-nvim-dap.nvim',
-    'theHamsta/nvim-dap-virtual-text',
+    {
+      'theHamsta/nvim-dap-virtual-text',
+      opts = {
+        only_first_definitiion = false,
+        all_references = true,
+      },
+    },
   },
   keys = {
     {
