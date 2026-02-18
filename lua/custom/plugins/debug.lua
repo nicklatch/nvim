@@ -127,6 +127,7 @@ return {
         type = 'php',
         request = 'launch',
         name = 'Listen for Xdebug',
+        hostname = '0.0.0.0',
         port = 9003,
         pathMappings = {
           -- container path = local path : FIXME: Hard coded for now

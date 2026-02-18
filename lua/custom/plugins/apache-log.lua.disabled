@@ -1,9 +1,10 @@
 local default_path = 'var/logs/taps-error.log'
 
 return {
-  dir = '~/Repos/nvim_plugins/apache-log.nvim',
+  dir = '~/Repos/apache-log.nvim',
   dependencies = {
-    'folke/snacks.nvim',
+    'nvim-lua/plenary.nvim',
+    'MunifTanjim/nui.nvim',
   },
   keys = {
     {
@@ -16,16 +17,25 @@ return {
   },
   cmd = { 'ApacheLog', 'ApacheLogClose' },
   opts = {
-    ui = 'snacks',
+    ui = 'nui',
+    ui_size = {
+      width = 0.85,
+      height = 0.7,
+    },
+    ui_border = 'rounded',
     auto_scroll = true,
     list_width = 0.5,
     detail_height = 0.4,
     debounce_ms = 200,
     truncate_length = 80,
+    columns = {
+      level = 3,
+      time = 8,
+      module = 12,
+      message = 60,
+    },
   },
   config = function(_, opts)
     require('apache-log').setup(opts)
   end,
 }
-
--- vim: ts=2 sts=2 sw=2 et

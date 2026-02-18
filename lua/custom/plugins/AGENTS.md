@@ -36,6 +36,10 @@ User-owned Lazy.nvim plugin specs and overrides, typically one file per plugin o
 - `lua/custom/plugins/telescope.lua.disabled` lives beside this directory but is intentionally excluded from the import tree; Snacks modules drive search instead.
 - The Apache log viewer spec points to `~/Repos/apache-log.nvim`, so the external repository must exist for the plugin to load.
 
+## DEBUGGING LEARNINGS
+- In `debug.lua`, fix Xdebug attach/connect failures before changing `pathMappings`; mappings are only evaluated after a DBGp session starts.
+- A host listener on `0.0.0.0:9003` does not guarantee Docker container reachability; verify container->host TCP to `:9003` before DAP config churn.
+
 ## NOTES
 - Use `:Lazy` to check plugin load status when developing specs.
 - Keep `lua/custom/plugins/AGENTS.md` updated with any new domain-specific conventions that emerge inside this directory.

@@ -23,3 +23,28 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.opt_local.spell = true
   end,
 })
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = {
+    'bash',
+    'diff',
+    'html',
+    'css',
+    'json',
+    'javascript',
+    'typescript',
+    'lua',
+    'luadoc',
+    'markdown',
+    'markdown_inline',
+    'query',
+    'vim',
+    'vimdoc',
+    'php',
+    'blade',
+    'twig',
+  },
+  callback = function()
+    vim.treesitter.start()
+  end,
+})
