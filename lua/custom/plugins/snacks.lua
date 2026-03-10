@@ -7,7 +7,9 @@ return {
   opts = {
     scratch = {},
     lazygit = {},
-    input = {},
+    input = { enabled = true },
+    statuscolumn = { enabled = true },
+    toggle = { enabled = true },
     indent = {
       enabled = true,
       animate = {
@@ -19,11 +21,17 @@ return {
     },
     -- Docs: https://github.com/folke/snacks.nvim/blob/main/docs/picker.md | :h snacks-picker
     picker = {
+      actions = {
+        opencode_send = function(...)
+          return require('opencode').snacks_picker_send(...)
+        end,
+      },
       win = {
         input = {
           keys = {
             ['<c-s>'] = false,
             ['<c-h>'] = { 'edit_split', mode = { 'i', 'n' } },
+            ['<a-a>'] = { 'opencode_send', mode = { 'n', 'i' } },
           },
         },
       },
@@ -37,7 +45,7 @@ return {
       },
       sources = {
         lsp_symbols = {
-          layout = { preset = 'sidebar', layout = { position = 'right' } },
+          layout = { preset = 'default' },
         },
         commands = {
           layout = {
@@ -47,7 +55,7 @@ return {
         explorer = {
           auto_close = true,
           layout = {
-            preset = 'sidebar',
+            preset = 'default',
             preview = true,
           },
         },
@@ -100,6 +108,13 @@ return {
         })
       end,
       desc = '[T]oggle a floating [t]erminal',
+    },
+    {
+      '<leader>tw',
+      function()
+        Snacks.toggle.option('wrap'):toggle()
+      end,
+      desc = '[T]oggle line [W]rap',
     },
     {
       '<leader>tj',

@@ -18,13 +18,36 @@ return {
       { 'mason-org/mason.nvim', opts = {} },
       'mason-org/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
-      { 'j-hui/fidget.nvim', opts = {} },
+      {
+        'j-hui/fidget.nvim',
+        opts = {
+          notification = {
+            {
+              window = {
+                winblend = 100,
+              },
+            },
+          },
+          progress = {
+            display = {
+              progress = { 'dots_negative' },
+            },
+          },
+        },
+      },
       'saghen/blink.cmp',
     },
     config = function()
-      vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-        border = 'rounded',
-      })
+      vim.lsp.handlers['textDocument/signatureHelp'] = function(err, result, ctx, config)
+        return vim.lsp.handlers.signature_help(
+          err,
+          result,
+          ctx,
+          vim.tbl_extend('force', config or {}, {
+            border = 'rounded',
+          })
+        )
+      end
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
         callback = function(event)
@@ -111,9 +134,7 @@ return {
 
       local servers = {
         twiggy_language_server = {
-          init_options = {
-            embeddedLanguages = { css = true, javascript = true },
-          },
+          init_options = {},
           settings = {
             twiggy = {
               framework = 'custom',
@@ -148,7 +169,7 @@ return {
 
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-        'stylua', -- Used to format Lua code
+        'stylua',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

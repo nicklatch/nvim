@@ -10,6 +10,7 @@ return {
       lsp = {
         enabled = true,
       },
+      heading = { icons = { '󰼏 ', '󰎨 ' } },
     },
   },
 }

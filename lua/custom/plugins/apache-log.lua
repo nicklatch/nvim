@@ -9,7 +9,12 @@ return {
     {
       '<leader>ta',
       function()
-        require('apache-log').open(default_path)
+        local alog = require 'apache-log'
+        if alog.is_open() then
+          alog.close()
+        else
+          alog.open(default_path)
+        end
       end,
       desc = '[T]oggle [A]pache Log Viewer',
     },

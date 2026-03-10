@@ -69,9 +69,6 @@ return {
           auto_show_delay_ms = 250,
           window = { border = 'rounded' },
         },
-        ghost_text = {
-          enabled = true,
-        },
       },
       sources = {
         default = { 'lsp', 'path', 'snippets', 'buffer', 'lazydev' },
@@ -93,6 +90,13 @@ return {
           },
           lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
           dadbod = { name = 'Dadbod', module = 'vim_dadbod_completion.blink' },
+          -- minuet = {
+          --   name = 'minuet',
+          --   module = 'minuet.blink',
+          --   async = true,
+          --   timeout_ms = 3000,
+          --   score_offset = 1001,
+          -- },
         },
       },
       snippets = { preset = 'luasnip' },

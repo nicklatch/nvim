@@ -3,7 +3,6 @@ return {
     filetypes = { 'php' },
     init_options = {
       ['0'] = vim.env.DEVSENSE_PHP_LS_LICENSE,
-      embeddedLanguages = { css = true, javascript = true },
     },
     settings = {
       php = {
